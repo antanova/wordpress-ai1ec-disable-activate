@@ -1,7 +1,8 @@
-<?php 
+<?php
+
 /*
  * Plugin name: All in one event calendar disable activate
- * Version: 1.0.0
+ * Version: 1.0.2
  * Description: The all in one event calendar introduced a 'forced' sign-in for version 2.6 up. This plugin aims to remove that requirement.
  */
 namespace Antanova\Wordpress\Ai1ec;
@@ -15,7 +16,8 @@ class DisableActivate
         add_filter('http_response', [$this, 'modify_http_response'], 10, 3);
     }
 
-    public function modify_http_response($response, $parsed_args, $url) {
+    public function modify_http_response($response, $parsed_args, $url)
+    {
     
         if ($url !== self::API_URL) {
             return $response;
@@ -31,5 +33,4 @@ class DisableActivate
     }
 }
 
-(new DisableActivate)->assignHooks();
-
+(new DisableActivate())->assignHooks();
