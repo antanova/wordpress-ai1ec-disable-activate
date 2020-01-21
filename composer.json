@@ -1,6 +1,7 @@
 {
     "name": "antanova/wordpress-ai1ec-disable-activate",
     "type": "wordpress-plugin",
+    "version": "1.0.1",
     "repositories": [
         {
           "type": "composer",
